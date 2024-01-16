@@ -1,0 +1,16 @@
+var w := 0;
+
+proc foo(x: int, y: int)
+	proc work(x: int)
+		if y <> 0 then
+			w = x / y
+		else
+			w = x * x;
+		fi
+	corp
+
+	work(6)
+corp
+
+foo(9, 2)
+out(string(float(w)));

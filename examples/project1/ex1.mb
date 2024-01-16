@@ -1,0 +1,13 @@
+/# var w: int = 3;
+var w2: float; # no initializer #/
+var w3 := 5.2; # no type
+
+proc foo(x: int, y: float)
+    proc work(x: int): int
+        ret int(x * y)
+    corp
+
+    w = work(x + 5);
+corp
+
+foo(1, w3);

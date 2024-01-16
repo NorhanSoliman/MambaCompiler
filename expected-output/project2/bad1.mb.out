@@ -1,0 +1,23 @@
+Program
+    Block
+        VariableDeclaration
+            Expression
+                Term
+                    Factor
+        ProcedureDeclaration
+            FormalParameters
+            Block
+                ProcedureDeclaration
+                    FormalParameters
+                    Block
+                        Statement
+                            ReturnStatement
+                                Expression
+                                    Term
+                                        Factor
+                                            CallExpression
+                                                ActualParameters
+                                                    Expression
+                                                        Term
+                                                            Factor
+Error: unexpected token 'y'

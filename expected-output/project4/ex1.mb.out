@@ -1,0 +1,101 @@
+.version 49 0
+.class public super Mamba
+.super java/lang/Object
+
+.method public <init> : ()V
+.code stack 1 locals 1
+   aload_0
+   invokespecial Method java/lang/Object <init> ()V
+   return
+.end code
+.end method
+
+.method public static _out : (Ljava/lang/String;)V
+.code stack 2 locals 1
+   getstatic Field java/lang/System out Ljava/io/PrintStream;
+   aload_0
+   invokevirtual Method java/io/PrintStream println (Ljava/lang/String;)V
+   return
+.end code
+.end method
+
+.method public static _int : (F)I
+.code stack 2 locals 1
+   fload_0
+   f2i
+   ireturn
+.end code
+.end method
+
+.method public static _float : (I)F
+.code stack 2 locals 1
+   iload_0
+   i2f
+   freturn
+.end code
+.end method
+
+.method public static _string : (F)Ljava/lang/String;
+.code stack 2 locals 1
+   fload_0
+   invokestatic Method java/lang/Float toString (F)Ljava/lang/String;
+   areturn
+.end code
+.end method
+
+.field static public w I
+.field static public foo_x I
+.field static public foo_y I
+.field static public foo_work_x I
+
+.method static public foo_work : (I)V
+.code stack 32 locals 32
+   iload_0
+   putstatic Mamba foo_work_x I
+   getstatic Mamba foo_y I
+   ldc 0
+   if_icmpeq L0
+   getstatic Mamba foo_work_x I
+   getstatic Mamba foo_y I
+   idiv
+   putstatic Mamba w I
+   goto L1
+L0:
+   getstatic Mamba foo_work_x I
+   getstatic Mamba foo_work_x I
+   imul
+   putstatic Mamba w I
+L1:
+   return
+.end code
+.end method
+
+.method static public foo : (II)V
+.code stack 32 locals 32
+   iload_0
+   putstatic Mamba foo_x I
+   iload_1
+   putstatic Mamba foo_y I
+   ldc 6
+   invokestatic Method Mamba foo_work (I)V
+   return
+.end code
+.end method
+
+.method static public main : ([Ljava/lang/String;)V
+.code stack 32 locals 32
+   ldc 0
+   putstatic Mamba w I
+   ldc 9
+   ldc 2
+   invokestatic Method Mamba foo (II)V
+   getstatic Mamba w I
+   invokestatic Method Mamba _float (I)F
+   invokestatic Method Mamba _string (F)Ljava/lang/String;
+   invokestatic Method Mamba _out (Ljava/lang/String;)V
+   return
+.end code
+.end method
+
+.sourcefile 'Mamba.java'
+.end class
